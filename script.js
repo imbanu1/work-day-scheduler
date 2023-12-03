@@ -30,11 +30,17 @@
         var blockHour = parseInt(block.id.split('-')[1]);
 
         if (blockHour < currentHour) {
+            
             block.classList.add('past');
+            console.log('Past');
         }else if (blockHour === currentHour) {
+            
             block.classList.add('present');
+            console.log('Present')
         }else {
+            
             block.classList.add('future');
+            console.log('Future');
         }
         });
     });
