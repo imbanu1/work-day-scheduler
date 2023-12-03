@@ -14,6 +14,9 @@
             var timeBlockId = parent.id;
             var userInput = parent.querySelector('.description').value;
             localStorage.setItem(timeBlockId, userInput);
+            
+            var message = document.createElement('p');
+            message.textContent = 'Appointment added to local storage';
         }
 });
     //
@@ -33,12 +36,12 @@
             
             block.classList.add('past');
             console.log('Past');
+
         }else if (blockHour === currentHour) {
-            
             block.classList.add('present');
-            console.log('Present')
-        }else {
+            console.log('Present');
             
+        }else {
             block.classList.add('future');
             console.log('Future');
         }
