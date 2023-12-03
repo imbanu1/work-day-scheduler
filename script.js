@@ -56,3 +56,12 @@
             }
         });
     });
+    document.addEventListener('DOMContentLoaded', function() {
+        var currentDate = new Date().toLocaleDateString('en-US',{
+            day: 'numeric',
+            weekday: 'long',
+            month: 'long',
+            year: 'numeric'
+        });
+        document.getElementById('currentDay').textContent = currentDate;
+    });
