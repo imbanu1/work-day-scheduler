@@ -15,8 +15,6 @@ THEN each time block is color-coded to indicate whether it is in the past, prese
 WHEN I click into a time block
 THEN I can enter an event
 ![image4](https://github.com/imbanu1/work-day-scheduler/blob/main/assets/images/work-day4.png?raw=true)
-WHEN I click the save button for that time block
-THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ![image5](https://github.com/imbanu1/work-day-scheduler/blob/main/assets/images/work-day5.png?raw=true)
