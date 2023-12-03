@@ -14,9 +14,6 @@
             var timeBlockId = parent.id;
             var userInput = parent.querySelector('description').value;
             localStorage.setItem(timeBlockId, userInput);
-
-
-
         }
 });
     //
@@ -25,11 +22,30 @@
     // attribute of each time-block be used to conditionally add or remove the
     // past, present, and future classes? How can Day.js be used to get the
     // current hour in 24-hour time?
+    document.addEventListener('DOMContentLoaded', function() {
+        var currentHour = new Date().getHours();
+        var timeBlocks = document.querySelectorAll('.time-block');
+
+        timeBlocks.forEach(function(block){
+        var blockHour = parseInt(block.id.split('-')[1]);
+
+        if (blockHour < currentHour) {
+            block.classList.add('past');
+        }else if (blockHour === currentHour) {
+            block.classList.add('present');
+        }else {
+            block.classList.add('future');
+        }
+        });
+    });
     //
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
     //
     // TODO: Add code to display the current date in the header of the page.
+    document.addEventListener('DOMContentLoaded', function() {
+    var timeBlocks = document.querySelectorAll('.time-block');
+
 
   
