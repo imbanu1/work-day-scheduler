@@ -46,6 +46,14 @@
     // TODO: Add code to display the current date in the header of the page.
     document.addEventListener('DOMContentLoaded', function() {
     var timeBlocks = document.querySelectorAll('.time-block');
+        timeBlocks.forEach(function(block) {
+            var blockId = block.id;
+            var savedInput !== null) {
+                block.querySelector
+            }
 
+
+
+        }
 
   
