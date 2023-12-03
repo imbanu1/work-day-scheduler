@@ -26,21 +26,22 @@
     // past, present, and future classes? How can Day.js be used to get the
     // current hour in 24-hour time?
     document.addEventListener('DOMContentLoaded', function() {
-        var currentHour = new Date().getHours();
+        var currentTime = dayjs();
         var timeBlocks = document.querySelectorAll('.time-block');
 
         timeBlocks.forEach(function(block){
         var blockHour = parseInt(block.id.split('-')[1]);
+        var blockTime = dayjs().hour(blockHour);
 
-        if (blockHour < currentHour) {
+        if (blockTime.isBefore(currentTime, 'hour')) {
             
             block.classList.add('past');
             console.log('Past');
 
-        }else if (blockHour === currentHour) {
+        }else if (blockTime.isSame(currentTime, 'hour')) {
             block.classList.add('present');
             console.log('Present');
-            
+
         }else {
             block.classList.add('future');
             console.log('Future');
@@ -66,11 +67,7 @@
         });
     });
     document.addEventListener('DOMContentLoaded', function() {
-        var currentDate = new Date().toLocaleDateString('en-US',{
-            day: 'numeric',
-            weekday: 'long',
-            month: 'long',
-            year: 'numeric'
-        });
-        document.getElementById('currentDay').textContent = currentDate;
+        var currentDate = dayjs().format('dddd, MMMM D, YYYY h:mm A');
+        var currentDateElement = document.getElementById('currentDay');
+        currentDateElement.textContent = currentDate
     });
