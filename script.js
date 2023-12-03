@@ -12,7 +12,7 @@
         if (event.target.classList.contains('saveBtn')) {
             var parent = event.target.closest('.time-block');
             var timeBlockId = parent.id;
-            var userInput = parent.querySelector('description').value;
+            var userInput = parent.querySelector('.description').value;
             localStorage.setItem(timeBlockId, userInput);
         }
 });
